@@ -229,6 +229,14 @@ html {
     .mobile {
         display: none;
     }
+
+    .tablet-info-container {
+        display: inline-flex;
+    }
+
+    .info-section-container {
+        padding: 8rem;
+    }
 }
 
 @media (min-width: 830px) {
@@ -330,11 +338,33 @@ html {
     color: var(--purple);
     margin-bottom: 0.8rem;
     font-size: 2.4rem;
+    text-align: center;
 }
 
-.info-heading {
-    font-size: 2.4rem;
+/*  Mobile */
+.tablet-info-container {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: repeat(3, 16rem);
+    gap: 4rem;
+    display: none;
 }
+
+.number-1,
+.number-2,
+.number-3 {
+    grid-column: 1;
+    align-content: center;
+}
+
+.number-1-info,
+.number-2-info,
+.number-3-info {
+    grid-column: 2;
+    gap: 2.4rem;
+}
+
+
 
 .info-section .circle-container {
     height: 10rem;
