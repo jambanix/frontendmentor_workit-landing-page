@@ -31,7 +31,7 @@ html {
 /* Text */
 
 .text-1 {
-    font-size: 4.8rem;
+    font-size: 4rem;
     font-family: "Fraunces", cursive;
     font-weight: 400;
     letter-spacing: -.2rem;
@@ -93,10 +93,22 @@ html {
     margin-right: auto;
 }
 
+.circle {
+    width: 350vw;
+    height: 300vw;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: -290vw;
+    transform: translateX(-50%);
+}
+
+
 /* ! Hero section */
 
 .hero {
-    min-height: 56.1vh;
+    height: 65rem;
+    background-color: var(--purple-100);
 }
 
 .navbar {
@@ -128,18 +140,19 @@ html {
 }
 
 .hero-banner {
-    width: 100%;
-    min-height: 39rem;
+    height: 35rem;
     background-color: var(--purple-900);
     padding-top: 5.6rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    overflow: hidden;
+    position: relative;
 }
 
 .hero-headline {
     height: 19rem;
-    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: max(50%, 33.5rem);
     align-items: center;
 }
 
@@ -166,38 +179,138 @@ html {
 .hero-btn {
     width: 15.1rem;
     height: 5.3rem;
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
 }
 
-.hero-phone-container {
-    background-color: transparent;
-    min-height: 18.4rem;
+.circle-container {
+    height: 15rem;
+    background-color: var(--purple-100);
     position: relative;
-    bottom: 15rem;
+    overflow: hidden;
 }
 
-.hero-phone-container img {
-    height: 20rem;
-    width: 32rem;
+.hero-banner img {
+    margin-top: 6rem !important;
+    width: 70vw;
+    height: auto;
     position: absolute;
     left: 50%;
-    bottom: -8rem;
+    bottom: max(-30vw, -55rem);
     transform: translateX(-50%);
+    z-index: 10;
 }
 
+.circle-1 {
+    background-color: var(--purple-900); 
+}
+
+@media (min-width: 520px) {
+
+    .wrapper {
+        width: 80%;
+    }
+    .hero {
+        height: 72rem;
+    }
+
+    .hero-banner {
+        height: 45rem;
+        
+    }
+
+    .hero-headline {
+        height:24rem;
+    }
+}
+
+@media (min-width: 629px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 830px) {
+    .hero {
+        height: 80rem;
+    }
+
+    .hero-banner {
+        height: 50rem;
+        
+    }
+
+    .hero-headline {
+        height:29rem;
+    }
+
+    .hero-text {
+        font-size: 6rem;
+    }
+
+    .circle-container {
+        height: 30rem;
+    }
+
+    .info-section {
+        padding-top:10rem;
+    }
+
+}
+
+@media (min-width: 1027px) {
+    .info-section-container .wrapper {
+        margin-top: 10rem;
+    }
+}
+
+@media (min-width: 1383px) {
+    .info-section-container .wrapper {
+        margin-top: 20rem;
+    }
+
+    .hero-text {
+        font-size: 8rem;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .hero {
+        height: 90rem;
+    }
+
+    .hero-banner {
+        height: 60rem;
+    }
+
+    .circle-container {
+        height: 40rem;
+    }
+
+    .hero-banner img {
+        max-width: 110rem;
+    }
+}
+
+
+
 /* ! Info section */
+
 
 .info-section {
     background-color: var(--purple-100);
 }
 
-.info-section-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 6.4rem;
+.info-section-container .wrapper{
     text-align: center;
     gap: 3.2rem;
     color: var(--purple-900);
     width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
 }
 
 .info-box {
@@ -221,6 +334,15 @@ html {
 
 .info-heading {
     font-size: 2.4rem;
+}
+
+.info-section .circle-container {
+    height: 10rem;
+    background-color: white;
+}
+
+.circle-2 {
+    background-color: var(--purple-100);
 }
 
 /* ! Founder section */
