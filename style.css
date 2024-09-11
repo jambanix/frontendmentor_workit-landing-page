@@ -104,16 +104,15 @@ html {
 
 .hero-spiral {
     position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    object-fit: cover;
 }
 
 
 /* ! Hero section */
 
 .hero {
-    height: 65rem;
+    min-height: 65rem;
+    max-height: 110rem;
+    height: 80vw !important;
     background-color: var(--purple-100);
 }
 
@@ -146,6 +145,7 @@ html {
 
 .hero-banner {
     min-height: 35rem;
+    max-height: 60rem;
     background-color: var(--purple-900);
     padding-top: 5.6rem;
     padding-left: 2rem;
@@ -153,25 +153,21 @@ html {
     position: relative;
 }
 
-
-.hero-spiral-1 {
-    width: 50%;
-    top:-15%;
-    left: -30rem;
-    height: 50rem;
-    background-image: url("assets/images/bg-pattern-1.svg");
+.hero-spirals {
+    position: relative;
 }
 
-.hero-spiral-2 {
-    width: 30%;
-    bottom: 0;
-    right: -15rem;
-    height: 30rem;
-    background-image: url("assets/images/bg-pattern-2.svg");
+.hero-spiral-1 {
+    left: -200rem;
+    top: 20%;
+    width: 40rem;
+    height: auto;
+
 }
 
 .hero-headline {
     min-height: 19rem;
+    max-height: 40rem;
     align-items: center;
     text-align: center;
     color: white;
@@ -202,11 +198,11 @@ html {
 
 .hero-banner img {
     width: 70vw;
-    max-width: 110rem;
+    max-width: 70rem;
     height: auto;
     position: absolute;
     left: 50%;
-    bottom: max(-30vw, -55rem);
+    bottom: max(-35vw, -50rem);
     transform: translateX(-50%);
     z-index: 10;
 }
@@ -225,13 +221,20 @@ html {
     display: grid;
     grid-template-rows: 6;
     grid-template-columns: 1fr;
+    grid-template-areas: 
+        "number-1"
+        "number-1-info"
+        "number-2"
+        "number-2-info"
+        "number-3"
+        "number-3-info";
     gap: 4rem;
     padding-top: 8rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    align-items: center;
     justify-content: center;
     text-align: center;
+    color: var(--purple-900);
 }
 
 .info-box {
@@ -250,43 +253,8 @@ html {
     margin-bottom: 0.8rem;
     text-align: center;
     justify-self: center;
-}
-
-.number-1,
-.number-2,
-.number-3 {
-    grid-column: 1;
     align-content: center;
-    justify-content: center;
 }
-
-.number-1 { 
-    grid-row: 1
-}
-
-.number-1-info {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.number-2 { 
-    grid-row: 3
-}
-
-.number-2-info {
-    grid-column: 1;
-    grid-row: 4;
-}
-
-.number-3 { 
-    grid-row: 5
-}
-
-.number-3-info {
-    grid-column: 1;
-    grid-row: 6;
-}
-
 
 .info-section .circle-container {
     height: 10rem;
@@ -307,20 +275,20 @@ html {
 .founder-section-container {
     padding-top: 3rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.founder-pic-container {
-    width: 100%;
-    height: 28rem;
-    background-image: url("assets/images/image-founder.webp");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+
+.founder-pic-container img {
+    width: 28rem;
+    height: auto;
 }
 
 .founder-box {
     width: 90%;
-    max-width: 80rem;
+    max-width: 100rem;
     text-align: center;
     color: white;
     padding: 3.2rem;
@@ -331,6 +299,7 @@ html {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
 }
 
 .founder-btn {
@@ -355,21 +324,6 @@ html {
     gap: 3rem;
 }
 
-@media (min-width: 520px) {
-
-    .hero {
-        height: 72rem;
-    }
-
-    .hero-banner {
-        height: 45rem;
-        
-    }
-
-    .hero-headline {
-        height:24rem;
-    }
-}
 
 /* ! Tablet - info section changes position here */
 @media (min-width: 629px) {
@@ -380,69 +334,64 @@ html {
     }
 
     .info-section-container {
-        gap: 6rem;
-    }
-
-    .info-section-container {
         grid-template-rows: 3;
         grid-template-columns: 12rem, 1fr;
+        grid-template-areas:
+            "number-1 number-1-info"
+            "number-2 number-2-info"
+            "number-3 number-3-info";
+        row-gap: 5.6rem;
+        column-gap: 3.2rem;
         text-align: left;
-    }
-
-    .number-1,
-    .number-2,
-    .number-3 {
-        grid-column: 1;
-        align-self: center;
-    }
-
-    .number-1 { 
-        grid-row: 1;
-    }
-
-    .number-1-info {
-        grid-column: 2;
-        grid-row: 1;
-        text-align: left;
-    }
-
-    .number-2 { 
-        grid-row: 2;
-    }
-
-    .number-2-info {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .number-3 { 
-        grid-row: 3
-    }
-
-    .number-3-info {
-        grid-column: 2;
-        grid-row: 3;
+        align-items: flex-start;
+        gap: 6rem;
+        color: var(--purple-900);
     }
 
     .info-heading {
         align-self: flex-start;
     }
 
+    .info-number {
+        justify-content: center;
+        align-self: center;
+    }
+
+    .info-box {
+        gap: 2.8rem;
+    }
 }
 
 
 @media (min-width: 830px) {
-    .hero {
-        height: 80rem;
-    }
 
-    .hero-banner {
-        height: 50rem;
-        
+    .pad {
+        padding-left: 6rem;
+        padding-right: 6rem;
     }
+    
+    .text-1 {
+        font-size: 6rem;
+    }
+    
+    .text-2 {
+        font-size: 4.2rem;
 
-    .hero-headline {
-        height:29rem;
+    }
+    
+    .text-3 {
+        font-size: 3.2rem;
+
+    }
+    
+    .text-4 {
+        font-family: "Manrope";
+
+    }
+    
+    .text-5 {
+        font-family: "Manrope";
+
     }
 
     .circle-container {
@@ -453,37 +402,106 @@ html {
         height: 34rem;
     }
 
+    .hero-banner img {
+        bottom: max(-37vw, -60rem);
+    }
+
     .founder-section-container {
         display: flex;
-        position: relative;
+        flex-direction: row;
+        padding-top: 11.2rem;
+        padding-left: 11.2rem;
+        padding-right: 11.2rem;
+        flex-basis: 150%;
+        align-items: flex-start;
+
     }
 
     .founder-box {
-        margin-right: 0;
         min-height: 39rem;
         text-align: left;
         justify-content: left;
         align-items: flex-start;
-        flex-basis: 160%;
         top: 0;
+
     }
 
     .founder-pic-container {
-        justify-content: flex-end;
-        background-size:contain;
-        position: relative;
         width: 50rem;
         height: 100%;
-        
+        position: relative;
+    }
+
+    .founder-pic-container img {
+        justify-self: flex-end;
+        position: absolute;
+        right: -40%;
+        width: 40rem;
+        top: -20rem;
+    }
+    
+    .footer-container {
+        padding-top: 11rem;
     }
 
 }
 
 @media (min-width: 1027px) {
 
+    .hero-banner img {
+        bottom: -42rem;
+    }
+
+  
+    .pad {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+
+    .text-1 {
+        font-size: 8rem;
+        font-family: "Fraunces", cursive;
+        font-weight: 400;
+        letter-spacing: -.2rem;
+    }
+    
+    .text-2 {
+        font-size: 4.8rem;
+        font-family: "Fraunces";
+        font-weight: 600;
+        line-height: 120%;
+    }
+    
+    .text-3 {
+        font-size: 3.6rem;
+        font-family: "Fraunces";
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -.2rem;
+    }
+    
+    .text-4 {
+        font-family: "Manrope";
+        font-size: 2rem;
+        line-height: 180%;
+    }
+    
+    .text-5 {
+        font-family: "Manrope";
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 150%;
+    }
+
     .info-section-container {
         grid-template-rows: 2;
-        grid-template-columns: repeat(3, 30rem);
+        grid-template-columns: repeat(3, 3fr);
+        grid-template-areas: none;
+        row-gap: 5.6rem;
+        column-gap: 3.2rem;
+        text-align: center;
+        align-items: center;
+        gap: 6rem;
     }
     
 
@@ -519,32 +537,14 @@ html {
     }
 
     .info-heading {
-        align-self: center;
-    }
-
-    .info-text {
-        align-self: center;
         text-align: center;
-    }
-}
-
-@media (min-width: 1383px) {
-
-
-}
-
-@media (min-width: 1400px) {
-
-    .hero {
-        height: 90rem;
+        align-self: center;
     }
 
-    .hero-banner {
-        height: 60rem;
+    .info-box {
+        gap: 5.6rem;
+        align-self: flex-start;
     }
 
-    .circle-container {
-        height: 40rem;
-    }
 }
 
