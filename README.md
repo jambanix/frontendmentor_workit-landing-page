@@ -55,6 +55,6 @@ I'm happy with the result
 
 ## Author
 
-- Frontend Mentor - [@yjambanix](https://www.frontendmentor.io/profile/jambanix)
+- Frontend Mentor - [@jambanix](https://www.frontendmentor.io/profile/jambanix)
 
 
